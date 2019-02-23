@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KutuphaneDB" Class="KutuphaneDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-HBSJHGK\SQLEXPRESS;Initial Catalog=KutuphaneDB;Integrated Security=True" SettingsObjectName="KutuphaneApp.Properties.Settings" SettingsPropertyName="KutuphaneDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Yazar" Member="Yazars">
+    <Type Name="Yazar">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Yazar_Kitap" Member="Kitaps" ThisKey="ID" OtherKey="YazarID" Type="Kitap" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KitapTuru" Member="KitapTurus">
+    <Type Name="KitapTuru">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KitapID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TurID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Tur_KitapTuru" Member="Tur" ThisKey="TurID" OtherKey="ID" Type="Tur" IsForeignKey="true" />
+      <Association Name="Kitap_KitapTuru" Member="Kitap" ThisKey="KitapID" OtherKey="ID" Type="Kitap" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rol" Member="Rols">
+    <Type Name="Rol">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Rol_Uye" Member="Uyes" ThisKey="ID" OtherKey="RolID" Type="Uye" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tip" Member="Tips">
+    <Type Name="Tip">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Tip_Kitap" Member="Kitaps" ThisKey="ID" OtherKey="TipID" Type="Kitap" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tur" Member="Turs">
+    <Type Name="Tur">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Tur_KitapTuru" Member="KitapTurus" ThisKey="ID" OtherKey="TurID" Type="KitapTuru" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Uye" Member="Uyes">
+    <Type Name="Uye">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AdSoyad" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DogumYili" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sifre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RolID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Uye_OduncKitap" Member="OduncKitaps" ThisKey="ID" OtherKey="UyeID" Type="OduncKitap" />
+      <Association Name="Rol_Uye" Member="Rol" ThisKey="RolID" OtherKey="ID" Type="Rol" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.YayinEvi" Member="YayinEvis">
+    <Type Name="YayinEvi">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="YayinEvi_Kitap" Member="Kitaps" ThisKey="ID" OtherKey="YayinEviID" Type="Kitap" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OduncKitap" Member="OduncKitaps">
+    <Type Name="OduncKitap">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KitapID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UyeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BaslangicTarih" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="BitisTarih" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="GeriAlindiMi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GeriAlinmaTarihi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Uye_OduncKitap" Member="Uye" ThisKey="UyeID" OtherKey="ID" Type="Uye" IsForeignKey="true" />
+      <Association Name="Kitap_OduncKitap" Member="Kitap" ThisKey="KitapID" OtherKey="ID" Type="Kitap" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kitap" Member="Kitaps">
+    <Type Name="Kitap">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SayfaSayisi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YazarID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Dili" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="YayinEviID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="TipID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AlimTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="BasimTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Fiyati" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ResimURL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aktif" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OkunmaSayisi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Kitap_KitapTuru" Member="KitapTurus" ThisKey="ID" OtherKey="KitapID" Type="KitapTuru" />
+      <Association Name="Kitap_OduncKitap" Member="OduncKitaps" ThisKey="ID" OtherKey="KitapID" Type="OduncKitap" />
+      <Association Name="Tip_Kitap" Member="Tip" ThisKey="TipID" OtherKey="ID" Type="Tip" IsForeignKey="true" />
+      <Association Name="YayinEvi_Kitap" Member="YayinEvi" ThisKey="YayinEviID" OtherKey="ID" Type="YayinEvi" IsForeignKey="true" />
+      <Association Name="Yazar_Kitap" Member="Yazar" ThisKey="YazarID" OtherKey="ID" Type="Yazar" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

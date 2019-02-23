@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--CSS-->
+    <!-- Css sırası önemlidir , çünkü baskınlık vardır. -->
+    <link rel="stylesheet" type="text/css" href="/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/main.css" />
+
+    <title>Kütüphane</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <br />
+        <br />
+        <form class="form-horizontal" role="form" method="POST" action="/kullanici/giris_yap">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" style="padding-left: 60px;">
+                    <h2>Giriş</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group has-danger">
+                        <label class="sr-only" for="email">E-Mail Address</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                            <input type="text" name="Email" class="form-control" id="email"
+                                   placeholder="you@example.com" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="sr-only" for="password">Password</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                            <input type="password" name="Sifre" class="form-control" id="password"
+                                   placeholder="Password" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put password error message here -->
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 1rem; padding-left: 60px;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-success"><i class="fa fa-sign-in"></i> Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="/Content/js/jquery-3.3.1.min.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+    <script src="/Content/js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

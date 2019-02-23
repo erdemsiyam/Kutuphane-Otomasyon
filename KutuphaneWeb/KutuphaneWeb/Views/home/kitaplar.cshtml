@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "kitaplar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using KutuphaneWeb.Models
+@model IEnumerable<Kitap>
+
+
+<div class="row">
+    <nav class="navbar navbar-light bg-light kitap-ara-navbar">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2 aranacak-kelime" type="search" placeholder="Aranacak Kelime" aria-label="Search" name="aramaText">
+            <input value="Ara" type="button" class="btn btn-outline-success my-2 my-sm-0 kitap-ara-1 kitaparabutton" />
+        </form>
+        <form class="form-inline">
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0 secim1" id="inlineFormCustomSelect" name="aramaSecenek1">
+                <option value="0" selected>Seçiniz</option>
+                <option value="1">Hepsi</option>
+                <option value="2">Mevcut Olanlar</option>
+                <option value="3">Mevcut Olmayanlar</option>
+            </select>
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0 secim2" id="inlineFormCustomSelect" name="aramaSecenek2">
+                <option value="0" selected>Seçiniz</option>
+                <option value="1">En Çok Okunanlar</option>
+                <option value="2">Son Eklenenler</option>
+            </select>
+            <input value="Ara" type="button" class="btn btn-outline-success my-2 my-sm-0 kitap-ara-2 kitaparabutton" />
+        </form>
+    </nav>
+</div>
+<br>
+<div class="row kitaplar">
+
+    @{ 
+        Html.RenderAction("_ilkKezKitapGetir");
+    }}
+</div>
+
+

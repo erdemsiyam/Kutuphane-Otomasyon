@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "gecmis_listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using KutuphaneWeb.Models;
+@model IEnumerable<OduncKitap>
+
+<div class="row">
+    <ul class="list-group alinan-kitap-liste">
+        @foreach (var k in Model)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center alinan-kitap">
+                @k.Kitap.Adi
+                <span class="badge badge-success badge-pill alinan-kitap-alim-gun">Alım Tarihi : @k.BaslangicTarih </span>
+                <span class="badge badge-success badge-pill alinan-kitap-iade-gun">İade Tarihi : @k.GeriAlinmaTarihi </span>
+            </li>
+        }
+        
+    </ul>
+</div>
+

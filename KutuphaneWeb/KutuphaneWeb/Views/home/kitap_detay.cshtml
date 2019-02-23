@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "kitap_detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using KutuphaneWeb.Models
+@model Kitap
+
+
+<div class="row">
+    <div class="col-md-6 kitap-detay-resim">
+        <img class="card-img-top" src="~/Content/images/@Model.ResimURL" width="300px" height="600px" alt="@Model.Adi">
+    </div>
+    <div class="col-md-6 kitap-detay-aciklama">
+        <div class="row justify-content-md-center">
+            <h6>Adı : </h6>
+            <h7>@Model.Adi</h7>
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Yazar : </h6>
+            <h7>@Model.Yazar.Adi</h7>
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Türleri : </h6>
+            @if (Model.KitapTurus != null)
+            {
+                foreach (KitapTuru kt in Model.KitapTurus)
+                {
+                    <h7>@kt.Tur.Adi</h7>
+                }
+            }
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Sayfa Sayisi : </h6>
+            <h7>@Model.SayfaSayisi</h7>
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Mevcut : </h6>
+            @if ((bool)@Model.Aktif == true)
+            {<h7>Evet</h7>}
+            else
+            {<h7>Hayır,@ViewBag.kalanGun</h7>}
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Okunma Sayısı : </h6>
+            <h7>@Model.OkunmaSayisi</h7>
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Dili : </h6>
+            <h7>@Model.Dili</h7>
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Yayın Evi : </h6>
+            <h7>@Model.YayinEvi.Adi</h7>
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Cilt Tipi : </h6>
+            <h7>@Model.Tip.Adi</h7>
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Basım Tarihi : </h6>
+            <h7>@Model.BasimTarihi</h7>
+        </div>
+        <div class="row justify-content-md-center">
+            <h6>Alım Tarihi : </h6>
+            <h7>@Model.AlimTarihi</h7>
+        </div>
+    </div>
+</div>
+

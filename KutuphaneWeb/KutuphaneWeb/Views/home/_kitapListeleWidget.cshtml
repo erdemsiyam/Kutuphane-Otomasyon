@@ -1,0 +1,32 @@
+﻿@using KutuphaneWeb.Models
+@model IEnumerable<Kitap>
+
+@foreach (var kitap in Model)
+{
+    <div class="card kitap-gosterim" style="width: 18rem;">
+        <a href="/home/kitap_detay/@kitap.ID"><img class="card-img-top" src="~/Content/images/@kitap.ResimURL" alt="@kitap.Adi"></a>
+        <div class="card-body">
+            <a href="/home/kitap_detay/@kitap.ID"><p class="card-text">@kitap.Adi</p></a>
+            <br />
+            <div class="row">
+                <h6>Yazar : </h6>
+                <h7>@kitap.Yazar.Adi</h7>
+            </div>
+            <div class="row">
+                <h6>Okunma Sayısı : </h6>
+                <h7>@kitap.OkunmaSayisi</h7>
+            </div>
+            <div class="row">
+                <h6>Mevcut : </h6>
+                @if ((bool)kitap.Aktif == true)
+                {
+                    <h7>evet</h7>
+                }
+                else
+                {
+                    <h7>hayır</h7>
+                }
+            </div>
+        </div>
+    </div>
+}

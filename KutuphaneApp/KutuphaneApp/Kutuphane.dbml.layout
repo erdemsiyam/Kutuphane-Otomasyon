@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.5" name="Kutuphane">
+  <DataContextMoniker Name="/KutuphaneDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0e9762da-832a-442a-8da1-8c3acc507d24" absoluteBounds="0.75, 4, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/KutuphaneDataContext/Yazar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a53fa8a9-50f1-4c5f-ad68-f06db028a9c5" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc3c5f01-7792-4e13-bdc9-1579177f4542" absoluteBounds="6.25, 4, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/KutuphaneDataContext/KitapTuru" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e261016e-1ef8-4332-b21e-f32f25f6495f" absoluteBounds="6.265, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a017cb7-6c74-4b9a-b1f1-85a2aeacdd26" absoluteBounds="0.75, 9.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/KutuphaneDataContext/Rol" />
+      <nestedChildShapes>
+        <elementListCompartment Id="41ad0b70-4829-4dbb-89f1-f6bbefcc7e84" absoluteBounds="0.765, 9.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5ca2c86-e52a-4a0e-8e9f-17f23ad7e4b4" absoluteBounds="0.75, 2.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/KutuphaneDataContext/Tip" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa277427-b227-4af8-b320-ecf183b2d88d" absoluteBounds="0.765, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68bf7c1d-a937-4c89-bf31-fb9117c381e2" absoluteBounds="3.5, 12, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/KutuphaneDataContext/Tur" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcb5d974-1c30-4439-a997-f98083336ac2" absoluteBounds="3.515, 12.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="887b9999-c842-42be-8d77-ad704303de1e" absoluteBounds="3.5, 8.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/KutuphaneDataContext/Uye" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5cf8148b-097d-420a-bfe6-5f79a7e7df29" absoluteBounds="3.515, 9.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43b23381-11ef-43a6-8784-0edadfd06fd5" absoluteBounds="0.75, 6, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/KutuphaneDataContext/YayinEvi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a454b8bf-5320-4721-8800-1fbe2bdd9264" absoluteBounds="0.765, 6.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 12.5969962565104); (7.25 : 12.5969962565104); (7.25 : 5.3862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KutuphaneDataContext/Tur/Tur_KitapTuru" />
+      <nodes>
+        <classShapeMoniker Id="68bf7c1d-a937-4c89-bf31-fb9117c381e2" />
+        <classShapeMoniker Id="dc3c5f01-7792-4e13-bdc9-1579177f4542" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.84699625651042); (3.5 : 9.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KutuphaneDataContext/Rol/Rol_Uye" />
+      <nodes>
+        <classShapeMoniker Id="3a017cb7-6c74-4b9a-b1f1-85a2aeacdd26" />
+        <classShapeMoniker Id="887b9999-c842-42be-8d77-ad704303de1e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="56ba1fb6-761f-4266-8415-53377fbcdfed" absoluteBounds="6, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/KutuphaneDataContext/OduncKitap" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fad393a1-8bde-4682-857c-0e2355c5288a" absoluteBounds="6.015, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.53125 : 8.75); (3.53125 : 1.95274983723958); (6 : 1.95274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KutuphaneDataContext/Uye/Uye_OduncKitap" />
+      <nodes>
+        <classShapeMoniker Id="887b9999-c842-42be-8d77-ad704303de1e" />
+        <classShapeMoniker Id="56ba1fb6-761f-4266-8415-53377fbcdfed" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4c651b5e-1d3f-446d-963f-5003ab923255" absoluteBounds="3.625, 3.25, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/KutuphaneDataContext/Kitap" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e34db266-076f-4bc0-b3f2-38c61aecd1ba" absoluteBounds="3.6399999999999997, 3.71, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 4.69314697265625); (6.25 : 4.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KutuphaneDataContext/Kitap/Kitap_KitapTuru" />
+      <nodes>
+        <classShapeMoniker Id="4c651b5e-1d3f-446d-963f-5003ab923255" />
+        <classShapeMoniker Id="dc3c5f01-7792-4e13-bdc9-1579177f4542" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.625 : 3.25); (6 : 3.03049967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KutuphaneDataContext/Kitap/Kitap_OduncKitap" />
+      <nodes>
+        <classShapeMoniker Id="4c651b5e-1d3f-446d-963f-5003ab923255" />
+        <classShapeMoniker Id="56ba1fb6-761f-4266-8415-53377fbcdfed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.6562475); (3.44791666666667 : 2.6562475 : JumpStart); (3.61458333333333 : 2.6562475 : JumpEnd); (4.5937475 : 2.6562475); (4.5937475 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KutuphaneDataContext/Tip/Tip_Kitap" />
+      <nodes>
+        <classShapeMoniker Id="c5ca2c86-e52a-4a0e-8e9f-17f23ad7e4b4" />
+        <classShapeMoniker Id="4c651b5e-1d3f-446d-963f-5003ab923255" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.37580485026042); (3.44791666666667 : 6.37580485026042 : JumpStart); (3.61458333333333 : 6.37580485026042 : JumpEnd); (3.625 : 6.37580485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KutuphaneDataContext/YayinEvi/YayinEvi_Kitap" />
+      <nodes>
+        <classShapeMoniker Id="43b23381-11ef-43a6-8784-0edadfd06fd5" />
+        <classShapeMoniker Id="4c651b5e-1d3f-446d-963f-5003ab923255" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.44791666666667 : 4.59699625651042 : JumpStart); (3.61458333333333 : 4.59699625651042 : JumpEnd); (3.625 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KutuphaneDataContext/Yazar/Yazar_Kitap" />
+      <nodes>
+        <classShapeMoniker Id="0e9762da-832a-442a-8da1-8c3acc507d24" />
+        <classShapeMoniker Id="4c651b5e-1d3f-446d-963f-5003ab923255" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

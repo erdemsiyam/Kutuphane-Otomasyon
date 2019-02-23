@@ -1,0 +1,36 @@
+.giris-yap, .cikis-yap {
+    margin-left: 100px;
+}
+
+.kitap-gosterim .row {
+    padding-left: 20px;
+}
+.kitap-gosterim h7 {
+    padding-left: 2px;
+}
+
+
+/**/
+
+.kitap-detay-aciklama {
+    margin-top:30px;
+}
+
+/**/
+
+.alinan-kitap-alim-gun {
+    
+    margin-left: 50px;
+}
+.alinan-kitap-kalan-gun {
+    margin-left: 5px;
+}
+.alinan-kitap-iade-gun {
+    
+    margin-left: 5px;
+}
+
+/**/
+.kitaparabutton {
+    margin-right: 50px !important;
+}
